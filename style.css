@@ -81,6 +81,7 @@ body {
   margin: 0 auto;
   background-color: #fff;
   box-shadow: 0 2px 32px 0 rgba(153,166,191,0.50);
+  transition: background-color 2s ease-out;
 }
 /* show a bit of the background on small screens */
 @media (max-width: 1159px) {
@@ -225,6 +226,7 @@ body {
 /* contact list */
 dl {
   display: flex;
+  line-height: 1.125;
 }
 dt {
   min-width: 5rem; /* fudged */
@@ -234,8 +236,8 @@ dd {
 }
 dt, dd {
   display: inline-block; /* fallback */
-  padding-top: 0.25em;
-  padding-bottom: 0.25em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 /* CONTENT SPACING */
@@ -348,6 +350,6 @@ section + section:before {
     width: 300px;
   }
 }
-.headshot + p {
+.headshot + p + p {
   margin-bottom: 1.5em;
 }
