@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="220px" height="37px" viewBox="0 0 220 37" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.1 (72631) - https://sketchapp.com -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <text id="text-1" font-family="BasicSans-SemiBold, Basic Sans" font-size="30" font-weight="500" fill="#FFFFFF">
+            <tspan x="0" y="30">Hang Ngo </tspan>
+            <tspan x="136.62" y="30" font-family="BasicSans-LightIt, Basic Sans" font-style="italic" font-weight="300">Psy.D.</tspan>
+        </text>
+        <filter x="-3.7%" y="-19.4%" width="107.5%" height="147.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0509803922   0 0 0 0 0.31372549   0 0 0 0 0.694117647  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="1">
+        <g id="hang-ngo-website-mockup_v2" transform="translate(-137.000000, -35.000000)" fill="#FFFFFF">
+            <g id="Group" transform="translate(140.000000, 29.000000)">
+                <g id="logo">
+                    <use filter="url(#filter-2)" xlink:href="#text-1"></use>
+                    <use xlink:href="#text-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
