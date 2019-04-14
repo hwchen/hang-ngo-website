@@ -29,10 +29,26 @@ h2 {
   text-transform: uppercase;
   color: #08498E; /* fallback */
   margin-bottom: 1.5rem;
+  /* anchor offset */
+  padding-top: 4rem;
+  margin-top: -4rem;
 }
-p {
-font-size: 1.125rem;
-line-height: 1.666;
+@media (min-width: 600px) {
+  h2 {
+    padding-top: 11rem;
+    margin-top: -11rem;
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+p, dl {
+  font-size: 1.125rem;
+  line-height: 1.666;
+}
+h4, .h4-size {
+  font-size: 1.25rem;
 }
 
 /* links */
@@ -56,6 +72,49 @@ section a:focus {
     padding: 1rem 2rem;
   }
 }
+body {
+  background: #08498E; /* fallback */
+}
+.content {
+  width: 1160px;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 2px 32px 0 rgba(153,166,191,0.50);
+}
+/* show a bit of the background on small screens */
+@media (max-width: 1159px) {
+  .content {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+}
+/* rounded corners on big screens */
+@media (min-width: 1160px) {
+  .content {
+    border-radius: 0.5rem;
+  }
+}
+
+/* stacked layout */
+@media (max-width: 799px) {
+  .column + .column {
+    margin-top: 2rem;
+  }
+}
+/* two column layout */
+@media (min-width: 800px) {
+  .columns {
+    display: flex;
+  }
+  .column {
+    width: calc(50% - 1.25rem);
+  }
+  .column:last-child {
+    left: 2.5rem;
+  }
+}
+
+
 /* topbar layout */
 .topbar {
   width: 100%;
@@ -68,13 +127,20 @@ section a:focus {
     top: 0;
   }
   .content {
-    margin-top: 5rem;
+    margin-top: 6rem;
   }
 }
 .topbar-inner {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+}
+.topbar-inner,
+.footer small {
+  width: 1160px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* logo */
@@ -95,8 +161,8 @@ section a:focus {
     padding-top: 0.75rem;
   }
   .logo-img {
-    width: 8rem; /* fallback */
-    width: calc(3vw + 8rem);
+    width: 10rem; /* fallback */
+    width: calc(3vw + 9rem);
     /* offset shadow */
     top: -2px;
     left: -1px;
@@ -111,7 +177,7 @@ section a:focus {
 .nav-item {
   display: inline-block;
 }
-/* spacout out adjacent items */
+/* space out out adjacent items */
 .nav-item:not(:last-child) {
   margin-right: 1em;
 }
@@ -137,30 +203,51 @@ section a:focus {
   text-decoration: underline;
 }
 
+/* footer */
+.footer-inner {
+  display: block;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1.125rem;
+  color: #fff;
+  text-shadow: 0 1px 4px #0D50B1;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+@media (min-width: 600px) {
+  .footer-inner {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    text-align: center;
+  }
+}
+
 /* contact list */
 dl {
   display: flex;
 }
 dt {
-  min-width: 4.5rem; /* fudged */
+  min-width: 5rem; /* fudged */
 }
 dd {
   margin-left: 0;
 }
 dt, dd {
   display: inline-block; /* fallback */
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
 }
 
 /* CONTENT SPACING */
-.content h3 {
-  margin-top: 1.25em;
-}
 .content * + p,
 .content * + ul {
-  margin-top: 1em;
+  margin-top: 0.625em;
 }
 .content li + li {
   margin-top: 0.5em;
+}
+.content * + h4 {
+  margin-top: 1em;
 }
 
 .content ul {
@@ -179,6 +266,20 @@ section {
   margin-right: auto;
   clear: both;
 }
+section:first-of-type {
+  padding-top: 1rem;
+}
+section:last-of-type {
+  padding-bottom: 1rem;
+}
+@media (min-width: 600px) {
+  section:first-of-type {
+    padding-top: 3.5rem;
+  }
+  section:last-of-type {
+    padding-bottom: 3.5rem;
+  }
+}
 section + section {
   margin-top: 8rem;
 }
@@ -192,14 +293,36 @@ section:after {
 section + section:before {
   display: block;
   content: "";
-  position: absolute;
+  position: relative;
   width: 20%;
   left: 40%;
+  margin-top: 0;
   top: -4.25rem;
   border-top: 0.5rem dotted #B9C0CC;
 }
+@media (min-width: 600px) {
+  section + section:before {
+    margin-top: 3rem;
+    top: -4.25rem;
+  }
+}
 
 /* ABOUT */
+.education li {
+  font-size: 1.125rem;
+}
+@media (max-width: 799px) {
+  .education {
+    clear: both;
+  }
+}
+/* hack bullet alignment when floated */
+@media (min-width: 800px) {
+  .education ul {
+    left: 1.125rem;
+    max-width: calc(100% - 1rem);
+  }
+}
 .headshot {
   border-radius: 0.375rem;
   box-shadow: 0 0 1rem rgba(153, 166, 191, 0.2);
@@ -211,10 +334,20 @@ section + section:before {
   margin-right: 2rem;
 }
 @media (min-width: 600px) {
-  margin-bottom: 1rem;
-  margin-right: 2.5rem;
+  .headshot {
+    margin-bottom: 1rem;
+    margin-right: 2.5rem;
+  }
 }
 .headshot-img {
   width: 30vw;
   display: block;
+}
+@media (min-width: 800px) {
+  .headshot-img {
+    width: 300px;
+  }
+}
+.headshot + p {
+  margin-bottom: 1.5em;
 }
