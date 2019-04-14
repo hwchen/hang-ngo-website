@@ -1,0 +1,145 @@
+/* RESETS & QUALITY OF LIFE IMPROVEMENTS */
+* {
+  margin: 0;
+  padding: 0;
+}
+img, svg, textarea {
+  max-width: 100%;
+}
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body * {
+  position: relative;
+}
+
+/*  BASE TYPOGRAPHY & THEMING  */
+body {
+  font-family: 'PT Sans', Tahoma, Geneva, sans-serif;
+  font-weight: 400;
+  color: #4C4F54;
+}
+h2 {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #08498E; /* fallback */
+}
+
+/* links */
+section a {
+  color: #6AB55E;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+/* interactions */
+section a:hover,
+section a:focus {
+  color: #08498E;
+}
+
+/* main layout */
+.topbar, .content, .footer {
+  padding: 1rem;
+}
+@media (min-width: 800px) {
+  .topbar, .content, .footer {
+    padding: 1rem 2rem;
+  }
+}
+/* topbar layout */
+.topbar {
+  width: 100%;
+  z-index: 5;
+  background: #08498E; /* fallback */
+}
+@media (min-width: 600px) {
+  .topbar {
+    position: fixed;
+    top: 0;
+  }
+  .content {
+    margin-top: 5rem;
+  }
+}
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* logo */
+.logo {
+  display: inline-block;
+  margin-right: auto;
+}
+.logo-link {
+  display: block;
+  padding-top: 1rem;
+}
+.logo-img {
+  top: -3px;
+  left: -4px;
+}
+@media (max-width: 899px) {
+  .logo-link {
+    padding-top: 0.75rem;
+  }
+  .logo-img {
+    width: 8rem; /* fallback */
+    width: calc(3vw + 8rem);
+    /* offset shadow */
+    top: -2px;
+    left: -1px;
+  }
+}
+
+/* nav */
+.nav-list {
+  padding-left: 0;
+  list-style: none;
+}
+.nav-item {
+  display: inline-block;
+}
+/* spacout out adjacent items */
+.nav-item:not(:last-child) {
+  margin-right: 1em;
+}
+@media (min-width: 980px) {
+  .nav-item:not(:last-child) {
+    margin-right: 1.75em;
+  }
+}
+.nav-link {
+  color: #fff;
+  text-shadow: 0 1px 4px #0D50B1;
+  text-decoration: none;
+  line-height: 2em;
+}
+@media (max-width: 899px) {
+  .nav-link {
+    font-size: 0.875rem;
+  }
+}
+/* interactions */
+.nav-link:hover,
+.nav-link:focus {
+  text-decoration: underline;
+}
+
+/* contact list */
+dl {
+  display: flex;
+}
+dt {
+  min-width: 4.5rem; /* fudged */
+}
+dd {
+  margin-left: 0;
+}
+dt, dd {
+  display: inline-block; /* fallback */
+}
