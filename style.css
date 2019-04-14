@@ -33,6 +33,14 @@ h2 {
   padding-top: 4rem;
   margin-top: -4rem;
 }
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+  h2 {
+    background: url("assets/images/texture-pattern.jpg") 50% 50% / 50% 50%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
 @media (min-width: 600px) {
   h2 {
     padding-top: 11rem;
@@ -308,11 +316,27 @@ dt, dd {
 
 .content ul {
   padding-left: 2rem;
+  list-style-type: none;
 }
 .content li {
   font-size: 0.875rem;
   margin-left: -0.875rem;
 }
+.content li:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0.375rem;
+  height: 0.375rem;
+  left: -1.125rem;
+  top: 0.375rem;
+  border-radius: 50%;
+  background: url("assets/images/texture-pattern.jpg");
+}
+.content li:nth-of-type(1n):before { background-position: 25px 25px; }
+.content li:nth-of-type(2n):before { background-position: 30px 50px; }
+.content li:nth-of-type(3n):before { background-position: 80px 80px; }
+.content li:nth-of-type(4n):before { background-position: 160px 80px; }
 
 /* SECTIONS */
 section {
@@ -377,6 +401,9 @@ section + section:before {
   .education ul {
     left: 1.125rem;
     max-width: calc(100% - 1rem);
+  }
+  .education ul li:before {
+    left: 19rem;
   }
 }
 .headshot {
