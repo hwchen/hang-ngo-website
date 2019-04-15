@@ -261,6 +261,14 @@ body:after {
     font-size: 0.875rem;
   }
 }
+@media (min-width: 900px) {
+  .nav-link {
+    display: block;
+    line-height: 6rem;
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+  }
+}
 /* interactions */
 .nav-link:hover,
 .nav-link:focus {
